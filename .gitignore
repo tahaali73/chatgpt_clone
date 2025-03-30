@@ -1,7 +1,5 @@
 .flaskenv
 __pycache__/
-app/
-main.py
 node_modules/
 package-lock.json
 package.json
@@ -9,3 +7,5 @@ tailwind.config.js
 myenv
 node_modules
 app\__pycache__
+app\static\main.css
+app\static\input.css
