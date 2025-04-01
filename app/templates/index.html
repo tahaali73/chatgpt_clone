@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="shortcut icon" href="https://chatgpt.com/favicon.ico" type="image/x-icon">
+    <style>
+        .right2.flex-1.flex.flex-col.overflow-hidden{
+            display: none;
+        }
+    </style>
     <title>ChatGPT Clone</title>
 </head>
 <body class="bg-gray-800 font-sans">
@@ -109,13 +114,14 @@
             <div class="max-w-3xl mx-auto px-4 pb-6">
                 <div class="relative">
                     <input 
+                        id="questionInput"
                         type="text" 
                         placeholder="Message ChatGPT..."
                         class="w-full py-3.5 pl-4 pr-12 text-sm bg-gray-700 rounded-xl border border-gray-600 
                             focus:outline-none focus:border-gray-500 focus:ring-1 focus:ring-gray-500
                             placeholder-gray-400 text-white shadow-lg"
                     >
-                    <button class="absolute right-3 top-1/2 -translate-y-1/2 p-2 hover:bg-gray-600/20 rounded-full transition-colors">
+                    <button id="sendButton"  class="absolute right-3 top-1/2 -translate-y-1/2 p-2 hover:bg-gray-600/20 rounded-full transition-colors">
                         <svg class="w-5 h-5 text-gray-300" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M6 12L3 3L21 12L3 21L6 12ZM6 12H12"/>
                         </svg>
@@ -129,14 +135,14 @@
     </div>
 
     <!-- Main Chat Area -->
-    <div class="flex-1 flex flex-col overflow-hidden">
+    <div class="right2 flex-1 flex flex-col overflow-hidden">
         <!-- Chat Messages -->
         <div class="flex-1 overflow-y-auto p-4">
             <div class="max-w-3xl mx-auto w-full px-4 space-y-4">
                 <!-- User Message -->
                 <div class="flex justify-end w-full">
                     <div class="flex items-end gap-3 max-w-full md:max-w-[80%]">
-                        <div class="bg-gray-700 rounded-xl p-4 text-sm">
+                        <div id="question2" class="bg-gray-700 rounded-xl p-4 text-sm">
                             What is 3+4×6 equal to?
                         </div>
                         <img src="https://lh3.googleusercontent.com/a/AEdFTp5WCu0iAduSsj6gcC0eXT0WOZVCUWNy1-ytW2mo6g=s96-c" 
@@ -149,13 +155,9 @@
                     <div class="flex items-start gap-3 max-w-full md:max-w-[80%]">
                         <img src="https://chatgpt.com/favicon.ico" 
                              class="h-8 w-8 rounded-full">
-                        <div class="bg-gray-700 rounded-xl p-4 text-sm space-y-3">
-                            <p>To calculate this, we need to follow the order of operations (PEMDAS):</p>
-                            <ol class="list-decimal list-outside pl-5 space-y-2">
-                                <li>Multiply 4 and 6: 4 × 6 = 24</li>
-                                <li>Add 3 to the result: 3 + 24 = 27</li>
-                            </ol>
-                            <p class="pt-2">So, 3 + 4 × 6 is equal to <span class="font-semibold">27</span>.</p>
+                        <div id="solution" class="bg-gray-700 rounded-xl p-4 text-sm space-y-3">
+                            3 + 4 × 6 is equal to 27
+                            
                             <!-- Regenerate Button -->
                             <div class="pt-3">
                                 <button class="flex items-center text-gray-300 hover:text-white text-xs font-medium p-2 hover:bg-gray-600 rounded-md transition-colors">
@@ -196,5 +198,6 @@
         </div>
     </div>
 </div>
+<script src="/static/js/script.js"></script>
 </body>
 </html>
