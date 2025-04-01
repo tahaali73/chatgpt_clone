@@ -22,16 +22,12 @@
             </button>
             <div class="border-t border-gray-700 my-2"></div>
             <div class="space-y-2">
+                {% for chat in mychats %}
                 <div class="bg-gray-800 cursor-pointer w-full rounded-md p-3 text-sm hover:bg-gray-700 transition-colors">
-                    Clone AI Assistant
+                    {{chat['question']}}
                 </div>
-                <div class="bg-gray-800 cursor-pointer w-full rounded-md p-3 text-sm hover:bg-gray-700 transition-colors">
-                    Clone AI Assistant
-                </div>
-                <div class="bg-gray-800 cursor-pointer w-full rounded-md p-3 text-sm hover:bg-gray-700 transition-colors">
-                    Clone AI Assistant
-                </div>
-            </div>
+                {% endfor %}
+            </div> 
         </div>
     </div>
 
